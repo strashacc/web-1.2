@@ -49,7 +49,7 @@
         <!-- Contact Form Section -->
         <section>
             <h2 class="mb-4">Get in Touch with Us</h2>
-            <form id = "contact_form" name="form">
+            <form id = "contact_form" name="form" onsubmit="validateForm(event)">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name:</label>
                     <input class="form-control" type="text" id="name" name="name" placeholder="Your Name" required>
@@ -84,7 +84,26 @@
     crossorigin="anonymous"></script>
 
     <script>
-
+        function validateForm(e){
+            let form = document.forms["form"];
+            
+            if(form["name"].value.charAt(0).toUpperCase() < 'A' || form["name"].value.charAt(0).toUpperCase() > 'Z'){error(1); return;}
+            for(let i = 1; i < form["name"].value.length; ++i){
+                if(form["name"].value.charAt(i) < 'a' || form["name"].value.charAt(i) > 'z'){error(1); return;}
+            }
+            if(form["name"].value.charAt(0).toLowerCase() == form["name"].value.charAt(0)){error(2); return;}
+            
+            function error(x){
+                e.preventDefault();
+                switch(x){
+                    case 1: alert("Make sure your name contains only letters.");
+                    break;
+                    case 2: alert("Make sure your name starts with an uppercase letter");
+                    break;
+                    default: alert("Unexpected Error");
+                }
+            }
+        }
     </script>
 
 </body>
