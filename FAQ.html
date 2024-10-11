@@ -56,7 +56,7 @@
                 <!-- Tip 1: Keep copies of important documents -->
                 <div class="accordion-item active">
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button expanded" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Keep Copies of Important Documents
                         </button>
@@ -144,16 +144,39 @@
     </footer>
 
     <script>
-        activeAccordionItem = document.getElementById("accordion-item active");
+        activeAccordionItem = document.getElementsByClassName("accordion-item active")[0];
         accordionItems = document.getElementsByClassName("accordion-item");
 
         for(let i = 0; i < accordionItems.length; ++i){
-
+            accordionItems[i].getElementsByClassName("accordion-button")[0].onclick = function(){accordionBtnClick(accordionItems[i])};
         }
 
 
-        function accordionFunct(){
+        function accordionBtnClick(item){
+            toggleAccordion(item);
 
+            if(activeAccordionItem == null){
+                activeAccordionItem = item;
+                return;
+            }
+            if(item == activeAccordionItem){
+                activeAccordionItem = null;
+                return;
+            }
+            
+            toggleAccordion(activeAccordionItem);
+
+            activeAccordionItem = item;
+
+            function toggleAccordion(x){
+                xBtn = x.getElementsByClassName("accordion-button")[0];
+                xContent = x.getElementsByClassName("accordion-collapse")[0];
+
+                x.classList.toggle("active");
+                xBtn.setAttribute("aria-expanded", (x.getAttribute("aria-expanded") == "false").toString());
+                xBtn.classList.toggle("collapsed");
+                xContent.classList.toggle("show");
+            }
         }
     </script>
     
