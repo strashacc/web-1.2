@@ -54,9 +54,9 @@
 
             <div class="accordion" id="safetyAccordion">
                 <!-- Tip 1: Keep copies of important documents -->
-                <div class="accordion-item">
+                <div class="accordion-item active">
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button expanded" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Keep Copies of Important Documents
                         </button>
@@ -143,7 +143,19 @@
         <p>&copy; 2024 Travel Destinations. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        activeAccordionItem = document.getElementById("accordion-item active");
+        accordionItems = document.getElementsByClassName("accordion-item");
 
+        for(let i = 0; i < accordionItems.length; ++i){
+
+        }
+
+
+        function accordionFunct(){
+
+        }
+    </script>
     
     <!-- Bootstrap JS and dependencies -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
