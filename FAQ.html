@@ -41,11 +41,46 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact Us</a>
                         </li>
+                        <li class="nav-item">
+                            <p class="nav-link" onclick="subDialog()">Subscribe</p>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <div class="overlay my-auto" id="sub-overlay" onclick="subDialog()">
+        <div class="col-lg-8 col-md-10 col-sm-8 mb-4 mx-4">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Subscribe to Our Email Newsletter</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="subDialog()">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id = "contact_form" name="form">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              I agree to receive promotional letters from WanderWise.
+                            </label>
+                          </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="subDialog()">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="subDialog()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <main class="container my-5">
         <section>
@@ -181,6 +216,13 @@
         }
     </script>
     
+    <!-- Overlay Script -->
+    <script>
+        function subDialog(){
+            subOverlay = document.getElementById("sub-overlay");
+            subOverlay.classList.toggle("active");
+        }
+    </script>
     <!-- Bootstrap JS and dependencies -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" 
