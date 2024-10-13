@@ -1,3 +1,21 @@
 header {
     padding: 0px;
 }
+
+.accordion-collapse{
+    overflow-y: hidden;
+    display: block;
+    visibility: visible;
+    max-height: fit-content;
+    height: 0;
+    transition: height 300ms ease-in-out;
+}
+.accordion-collapse.show{
+    transition: height 300ms ease-in-out;
+}
+.collapse:not(.show){
+    display: block;
+    &:not(.show) {
+        display: block;
+    }
+}
