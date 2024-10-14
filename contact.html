@@ -12,7 +12,7 @@
     <link href="common.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="liveClock()">
     <header>
         <!-- Bootstrap Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4">
@@ -109,6 +109,7 @@
     </main>
 
     <footer style="margin-top: 120px;" class="bg-dark text-white text-center py-4">
+        <p id="live-clock"></p>
         <p>Nuraidyn, Sayan, Dias</p>
         <p>&copy; 2024 Travel Destinations. All Rights Reserved.</p>
     </footer>
@@ -149,6 +150,20 @@
         function subDialog(){
             subOverlay = document.getElementById("sub-overlay");
             subOverlay.classList.toggle("active");
+        }
+        function liveClock(){
+            const time = new Date();
+            date = time.toDateString();
+            hours = time.getHours();
+            minutes = formatTime(time.getMinutes());
+            seconds = formatTime(time.getSeconds());
+
+            document.getElementById("live-clock").innerHTML = date + " " + hours + ":" + minutes + ":" + seconds;
+            setTimeout(liveClock, 1000);
+
+            function formatTime(value){
+                return (value >= 10 ? value : "0" + value);
+            }
         }
     </script>
 </body>

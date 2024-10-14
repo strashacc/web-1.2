@@ -7,6 +7,23 @@
 
     <style>
 
+.accordion-collapse{
+    overflow-y: hidden;
+    display: block;
+    visibility: visible;
+    max-height: fit-content;
+    height: 0;
+    transition: height 300ms ease-in-out;
+}
+.accordion-collapse.show{
+    transition: height 300ms ease-in-out;
+}
+.collapse:not(.show){
+    display: block;
+    &:not(.show) {
+        display: block;
+    }
+}
     </style>
 
     <link rel="stylesheet" href="common.css">
@@ -14,7 +31,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body>
+<body onload="liveClock()">
     <header>
         <!-- Bootstrap Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4">
@@ -168,6 +185,7 @@
     </main>
 
     <footer class="bg-dark text-white text-center py-4">
+        <p id="live-clock"></p>
         <p>Nuraidyn, Sayan, Dias</p>
         <p>&copy; 2024 Travel Destinations. All Rights Reserved.</p>
     </footer>
@@ -221,6 +239,20 @@
         function subDialog(){
             subOverlay = document.getElementById("sub-overlay");
             subOverlay.classList.toggle("active");
+        }
+        function liveClock(){
+            const time = new Date();
+            date = time.toDateString();
+            hours = time.getHours();
+            minutes = formatTime(time.getMinutes());
+            seconds = formatTime(time.getSeconds());
+
+            document.getElementById("live-clock").innerHTML = date + " " + hours + ":" + minutes + ":" + seconds;
+            setTimeout(liveClock, 1000);
+
+            function formatTime(value){
+                return (value >= 10 ? value : "0" + value);
+            }
         }
     </script>
     <!-- Bootstrap JS and dependencies -->
