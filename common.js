@@ -1,3 +1,4 @@
+onload = liveClock();
 //toggle subscription dialog
 function subDialog(){
     subOverlay = document.getElementById("sub-overlay");
