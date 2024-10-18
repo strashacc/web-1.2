@@ -6,24 +6,24 @@
     <title>FAQ</title>
 
     <style>
-
-.accordion-collapse{
-    overflow-y: hidden;
-    display: block;
-    visibility: visible;
-    max-height: fit-content;
-    height: 0;
-    transition: height 300ms ease-in-out;
-}
-.accordion-collapse.show{
-    transition: height 300ms ease-in-out;
-}
-.collapse:not(.show){
-    display: block;
-    &:not(.show) {
-        display: block;
-    }
-}
+        /* styles for bootstrap accordion override */
+        .accordion-collapse{
+            overflow-y: hidden;
+            display: block;
+            visibility: visible;
+            max-height: fit-content;
+            height: 0;
+            transition: height 300ms ease-in-out;
+        }
+        .accordion-collapse.show{
+            transition: height 300ms ease-in-out;
+        }
+        .collapse:not(.show){
+            display: block;
+            &:not(.show) {
+                display: block;
+            }
+        }
     </style>
 
     <link rel="stylesheet" href="common.css">
@@ -190,71 +190,12 @@
         <p>&copy; 2024 Travel Destinations. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        activeAccordionItem = document.getElementsByClassName("accordion-item active")[0];
-        accordionItems = document.getElementsByClassName("accordion-item");
-        accordionBtnClick(activeAccordionItem);
-
-        for(let i = 0; i < accordionItems.length; ++i){
-            accordionItems[i].getElementsByClassName("accordion-button")[0].onclick = function(){accordionBtnClick(accordionItems[i])};
-        }
-
-
-        function accordionBtnClick(item){
-            toggleAccordion(item);
-        
-            if(activeAccordionItem == null){
-                activeAccordionItem = item;
-                return;
-            }
-            if(item == activeAccordionItem){
-                activeAccordionItem = null;
-                return;
-            }
-        
-            toggleAccordion(activeAccordionItem);
-            activeAccordionItem = item;
-
-            function toggleAccordion(x){
-                xBtn = x.getElementsByClassName("accordion-button")[0];
-                xContent = x.getElementsByClassName("accordion-collapse")[0];
-
-                x.classList.toggle("active");
-                xBtn.setAttribute("aria-expanded", (x.getAttribute("aria-expanded") == "false").toString());
-                xBtn.classList.toggle("collapsed");
-                xContent.classList.toggle("show");
-                
-                if(xContent.classList.contains("show")){
-                    xContent.style.height = xContent.getElementsByClassName("accordion-body")[0].clientHeight + "px";
-                }
-                else{
-                    xContent.style.height = 0;
-                }
-            }
-        }
-    </script>
     
-    <!-- Overlay Script -->
-    <script>
-        function subDialog(){
-            subOverlay = document.getElementById("sub-overlay");
-            subOverlay.classList.toggle("active");
-        }
-        function liveClock(){
-            const time = new Date();
-            date = time.toDateString();
-            hours = time.getHours();
-            minutes = formatTime(time.getMinutes());
-            seconds = formatTime(time.getSeconds());
+    
+    <!-- Custom JS -->
+    <script src="common.js"></script>
+    <script src="accordion.js"></script>
 
-            document.getElementById("live-clock").innerHTML = date + " " + hours + ":" + minutes + ":" + seconds;
-            setTimeout(liveClock, 1000);
-
-            function formatTime(value){
-                return (value >= 10 ? value : "0" + value);
-            }
-        }
-    </script>
     <!-- Bootstrap JS and dependencies -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" 
