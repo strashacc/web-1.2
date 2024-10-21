@@ -1,5 +1,22 @@
+class Sound{
+    constructor(src){
+        this.sound = document.createElement("audio");
+        this.sound.src = src;
+        this.sound.setAttribute("preload", "auto");
+        this.sound.setAttribute("controls", "none");
+        this.sound.style.display = "none";
+    }
+
+    play(){
+        this.sound.play();
+    }
+    stop(){
+        this.sound.stop();
+    }
+}
 class Navbar {
     constructor(navItems) {
+        this.sound = new Sound('sounds/mixkit-modern-click-box-check-1120.wav');
         this.navItems = navItems;
         this.currentIndex = 0;
         this.focusCurrent();
@@ -19,6 +36,7 @@ class Navbar {
 
     focusCurrent() {
         this.navItems[this.currentIndex].focus();
+        this.sound.play();
         this.navItems[this.currentIndex].getElementsByClassName('nav-link')[0].classList.toggle('active');
     }
 
