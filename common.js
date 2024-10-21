@@ -1,4 +1,53 @@
+class Navbar {
+    constructor(navItems) {
+        this.navItems = navItems;
+        this.currentIndex = 0;
+        this.focusCurrent();
+    }
+
+    moveNext() {
+        this.navItems[this.currentIndex].getElementsByClassName('nav-link')[0].classList.toggle('active');
+        this.currentIndex = (this.currentIndex + 1) % this.navItems.length;
+        this.focusCurrent();
+    }
+
+    movePrev() {
+        this.navItems[this.currentIndex].getElementsByClassName('nav-link')[0].classList.toggle('active');
+        this.currentIndex = (this.currentIndex - 1 + this.navItems.length) % this.navItems.length;
+        this.focusCurrent();
+    }
+
+    focusCurrent() {
+        this.navItems[this.currentIndex].focus();
+        this.navItems[this.currentIndex].getElementsByClassName('nav-link')[0].classList.toggle('active');
+    }
+
+    followLink() {
+        this.navItems[this.currentIndex].getElementsByClassName('nav-link')[0].click();
+    }
+}
+
 onload = liveClock();
+
+
+const navItems = document.querySelectorAll('.nav-item');
+const navbar = new Navbar(navItems);
+
+document.addEventListener('keydown', function(event) {
+    switch(event.key){
+        case 'ArrowRight':
+            navbar.moveNext();
+            break;
+        case 'ArrowLeft':
+            navbar.movePrev();
+            break;
+        case 'Enter':
+            navbar.followLink();
+            break;
+    }
+    console.log(navbar);
+});
+
 //toggle subscription dialog
 function subDialog(){
     subOverlay = document.getElementById("sub-overlay");
