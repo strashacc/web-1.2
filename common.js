@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 window.onload = () => {
     liveClock();
@@ -71,8 +70,6 @@ document.addEventListener('keydown', function(event) {
     console.log(navbar);
 });
 
-=======
->>>>>>> edb489a (	modified:   FAQ.html)
 //toggle subscription dialog
 function subDialog(){
     subOverlay = document.getElementById("sub-overlay");
@@ -113,8 +110,4 @@ function validateForm(e){
             default: alert("Unexpected Error");
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> edb489a (	modified:   FAQ.html)
