@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="common.css">
 </head>
 
-<body onload="liveClock()">
+<body>
     <header>
         <!-- Bootstrap Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4">
@@ -228,26 +228,8 @@
         <p>&copy; 2024 Travel Destinations. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        function subDialog(){
-            subOverlay = document.getElementById("sub-overlay");
-            subOverlay.classList.toggle("active");
-        }
-        function liveClock(){
-            const time = new Date();
-            date = time.toDateString();
-            hours = time.getHours();
-            minutes = formatTime(time.getMinutes());
-            seconds = formatTime(time.getSeconds());
-
-            document.getElementById("live-clock").innerHTML = date + " " + hours + ":" + minutes + ":" + seconds;
-            setTimeout(liveClock, 1000);
-
-            function formatTime(value){
-                return (value >= 10 ? value : "0" + value);
-            }
-        }
-    </script>
+    <!-- Custom JS -->
+    <script src="common.js"></script>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 

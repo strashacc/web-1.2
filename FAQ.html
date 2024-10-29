@@ -7,7 +7,8 @@
     <title>FAQ</title>
 
     <style>
-        .accordion-collapse {
+        /* styles for bootstrap accordion override */
+        .accordion-collapse{
             overflow-y: hidden;
             display: block;
             visibility: visible;
@@ -15,14 +16,11 @@
             height: 0;
             transition: height 300ms ease-in-out;
         }
-
-        .accordion-collapse.show {
+        .accordion-collapse.show{
             transition: height 300ms ease-in-out;
         }
-
-        .collapse:not(.show) {
+        .collapse:not(.show){
             display: block;
-
             &:not(.show) {
                 display: block;
             }
@@ -34,7 +32,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-
 <body onload="liveClock()">
     <header>
         <!-- Bootstrap Navigation Bar -->
@@ -49,7 +46,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="cities.html">Top Cities</a>
@@ -232,72 +229,12 @@
         <p>Nuraidyn, Sayan, Dias</p>
         <p>&copy; 2024 Travel Destinations. All Rights Reserved.</p>
     </footer>
+    
+    
+    <!-- Custom JS -->
+    <script src="common.js"></script>
+    <script src="accordion.js"></script>
 
-    <script>
-        activeAccordionItem = document.getElementsByClassName("accordion-item active")[0];
-        accordionItems = document.getElementsByClassName("accordion-item");
-        accordionBtnClick(activeAccordionItem);
-
-        for (let i = 0; i < accordionItems.length; ++i) {
-            accordionItems[i].getElementsByClassName("accordion-button")[0].onclick = function () { accordionBtnClick(accordionItems[i]) };
-        }
-
-
-        function accordionBtnClick(item) {
-            toggleAccordion(item);
-
-            if (activeAccordionItem == null) {
-                activeAccordionItem = item;
-                return;
-            }
-            if (item == activeAccordionItem) {
-                activeAccordionItem = null;
-                return;
-            }
-
-            toggleAccordion(activeAccordionItem);
-            activeAccordionItem = item;
-
-            function toggleAccordion(x) {
-                xBtn = x.getElementsByClassName("accordion-button")[0];
-                xContent = x.getElementsByClassName("accordion-collapse")[0];
-
-                x.classList.toggle("active");
-                xBtn.setAttribute("aria-expanded", (x.getAttribute("aria-expanded") == "false").toString());
-                xBtn.classList.toggle("collapsed");
-                xContent.classList.toggle("show");
-
-                if (xContent.classList.contains("show")) {
-                    xContent.style.height = xContent.getElementsByClassName("accordion-body")[0].clientHeight + "px";
-                }
-                else {
-                    xContent.style.height = 0;
-                }
-            }
-        }
-    </script>
-
-    <!-- Overlay Script -->
-    <script>
-        function subDialog() {
-            subOverlay = document.getElementById("sub-overlay");
-            subOverlay.classList.toggle("active");
-        }
-        function liveClock() {
-            const time = new Date();
-            date = time.toDateString();
-            hours = time.getHours();
-            minutes = formatTime(time.getMinutes());
-            seconds = formatTime(time.getSeconds());
-
-            document.getElementById("live-clock").innerHTML = date + " " + hours + ":" + minutes + ":" + seconds;
-            setTimeout(liveClock, 1000);
-
-            function formatTime(value) {
-                return (value >= 10 ? value : "0" + value);
-            }
-        }
-    </script>
     <!-- Bootstrap JS and dependencies -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" 
