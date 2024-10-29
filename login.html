@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="login-section">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Enter username">
+            <button onclick="login()">Login</button>
+        </div>
+
+        <div id="app-section" style="display:none;">
+            <header>
+                <h2>Welcome, <span id="user-display"></span></h2>
+                <button onclick="logout()">Logout</button>
+                <label>
+                    <input type="checkbox" id="theme-toggle"> Dark Mode
+                </label>
+            </header>
+
+            <div id="filters">
+                <h3>Filter Results</h3>
+                <select id="filter-select" onchange="saveFilter()">
+                    <option value="all">All</option>
+                    <option value="active">Active</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </div>
+</body>
+
+</html>
