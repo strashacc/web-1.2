@@ -39,8 +39,3 @@ To run the project, you’ll need:
    - **Node.js** and **npm** (for package management and the development server)
    - **Git** (for cloning and version control)
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/strashacc/web-1.2.git
-   cd web-1.2
