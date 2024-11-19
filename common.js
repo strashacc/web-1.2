@@ -201,6 +201,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
     const setTheme = (theme) => {
       document.body.className = theme;
+      document.querySelector(".accordion").classList.add(theme);
+      document.querySelector('.accordion').classList.remove(theme == 'bg-dark' ? 'bg-light' : 'bg-dark');
+      document.querySelector('#login-section').classList.add(theme);
+      document.querySelector('#login-section').classList.remove(theme == 'bg-dark' ? 'bg-light' : 'bg-dark');
+    //   document.querySelector('#login-section').classList.toggle("bg-dark");
       if (theme === "bg-dark") {
         themeIcon.classList.remove("fa-sun");
         themeIcon.classList.add("fa-moon");
