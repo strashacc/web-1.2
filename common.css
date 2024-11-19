@@ -1,30 +1,32 @@
 header {
-    padding: 0px;
-}
-.nav-item:hover{
-    cursor: pointer;
+  padding: 0px;
 }
 
-.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: 10;
-    display: flex;
-    background: hsla(0, 0%, 0%, 0.3);
-    opacity: 0;
-
-    justify-content: center;
-    align-items: center;
-
-    visibility: hidden;
+.nav-item:hover {
+  cursor: pointer;
 }
-.overlay.active{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 300ms;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  display: flex;
+  background: hsla(0, 0%, 0%, 0.3);
+  opacity: 0;
+
+  justify-content: center;
+  align-items: center;
+
+  visibility: hidden;
+}
+
+.overlay.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 300ms;
 }
 
 body.bg-light {
@@ -38,18 +40,18 @@ body.bg-dark {
 }
 
 .accordion.bg-dark .accordion-button {
-    background-color: #343a40;
-    color: #f8f9fa;
+  background-color: #343a40;
+  color: #f8f9fa;
 }
 
 .accordion.bg-dark .accordion-body {
-    background-color: #495057;
-    color: #f8f9fa;
+  background-color: #495057;
+  color: #f8f9fa;
 }
 
 .container-login.bg-dark {
-    background-color: #343a40;
-    color: #f8f9fa;
+  background-color: #343a40;
+  color: #f8f9fa;
 }
 
 
@@ -101,8 +103,8 @@ body.bg-dark {
     color: #ffffff;
   } */
 
-  
-  /* .container {
+
+/* .container {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
@@ -113,17 +115,17 @@ body.bg-dark {
 
 
 #theme-toggle {
-  position: absolute; 
-  bottom: 20px; 
-  right: 20px; 
-  padding: 10px 20px; 
-  background-color: #007bff; 
-  color: white; 
-  border: none; 
-  border-radius: 5px; 
-  cursor: pointer; 
-  font-size: 16px; 
-  transition: background-color 0.3s; 
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .dark-mode-switch {
@@ -132,107 +134,115 @@ body.bg-dark {
   bottom: 20px;
   z-index: 1000;
 }
+
 #theme-toggle:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
 }
 
 
-   .container-login {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: flex-start; 
-    margin-top: 50px; 
-   
-    text-align: center; 
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 50px;
+
+  text-align: center;
 }
 
-#login-section, #app-section {
-    width: 300px;
-    padding: 20px; 
-    background-color: #f8f9fa; 
-    border: 1px solid #ccc; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+#login-section,
+#app-section {
+  width: 300px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #login-section.bg-dark {
-  background-color: #343a40; 
-  color: #f8f9fa; 
+  background-color: #343a40;
+  color: #f8f9fa;
+
+  input {
+    background-color: #343a40;
+    color: #f8f9fa;
+    border-color: gray;
+  }
 }
 
 #app-section.bg-dark {
-  background-color: #343a40; 
-  color: #f8f9fa; 
+  background-color: #343a40;
+  color: #f8f9fa;
 }
 
-   .logout {
-    background-color: #ff4d4d; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.logout {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .logout:hover {
-    background-color: #e60000; 
+  background-color: #e60000;
 }
 
 .logout:active {
-    background-color: #b30000; 
-    transform: scale(0.95);
+  background-color: #b30000;
+  transform: scale(0.95);
 }
 
-  .login{
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin-top: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.login {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
 .login:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .login:active {
-    background-color: #003f7f;
-    transform: scale(0.95);
+  background-color: #003f7f;
+  transform: scale(0.95);
 }
 
-.filter-select{
-  background-color: #f8f9fa; 
-  color: #333; 
-  border: 1px solid #ccc; 
-  border-radius: 5px; 
-  padding: 8px 12px; 
-  font-size: 16px; 
-  cursor: pointer; 
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+.filter-select {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .filter-select:focus {
-  border-color: #007bff; 
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   outline: none;
 }
 
 option {
-  background-color: #fff; 
-  color: #333; 
-  padding: 8px; 
+  background-color: #fff;
+  color: #333;
+  padding: 8px;
 }
 
 
-  @media (max-width: 600px) {
-    .container {
-      padding: 10px;
-    }
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
   }
+}
