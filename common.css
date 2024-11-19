@@ -32,27 +32,65 @@ header {
 body.bg-light {
   background-color: #f8f9fa;
   color: #212529;
+
+  footer{
+    background-color: #212529;
+  }
 }
 
 body.bg-dark {
   background-color: #212529;
   color: #f8f9fa;
+  /* .mb-5 {
+        *{
+            *{
+                *:not(.btn, .d-md-block){
+                    background-color: #495057;
+                }
+                
+            }
+        }
+  } */
+
+  *{
+    color: #f8f9fa;
+  }
+
+  .card {
+    background-color: #495057;
+  }
+  .accordion .accordion-button{
+    background-color: #343a40;
+  }
+  .accordion .accordion-body {
+    background-color: #495057;
+  }
+  .container-login {
+    background-color: #212529;
+
+    #login-section{
+        background-color: #495057;
+    }
+  }
+  footer{
+    background-color: black;
+  }
+  input, textarea, input:focus, textarea:focus{
+    color:#f8f9fa;
+    background-color: #343a40;
+  }
+
+  .overlay{
+    .modal-content{
+        background-color: #212529;
+    }
+  }
 }
 
-.accordion.bg-dark .accordion-button {
-  background-color: #343a40;
-  color: #f8f9fa;
-}
 
-.accordion.bg-dark .accordion-body {
-  background-color: #495057;
-  color: #f8f9fa;
-}
 
-.container-login.bg-dark {
-  background-color: #343a40;
-  color: #f8f9fa;
-}
+
+
 
 
 .navbar-dark.bg-success {
@@ -63,16 +101,6 @@ body.bg-dark {
   background-color: #e9ecef !important;
 }
 
-.accordion.bg-dark .accordion-button {
-  background-color: #343a40;
-  color: #f8f9fa;
-}
-
-.accordion.bg-dark .accordion-body {
-  background-color: #495057;
-  color: #f8f9fa;
-}
-
 .container-login {
   display: flex;
   flex-direction: column;
@@ -80,11 +108,6 @@ body.bg-dark {
   justify-content: flex-start;
   margin-top: 50px;
   text-align: center;
-}
-
-.container-login.bg-dark {
-  background-color: #343a40;
-  color: #f8f9fa;
 }
 
 
