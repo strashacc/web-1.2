@@ -107,6 +107,26 @@
                 <button type="submit" class="btn btn-primary" id="form_btn">Submit</button>
             </form>
         </section>
+
+        <!-- Contact and Map Section -->
+        <section class="contact-section">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="contact-heading">Контакты</h2>
+                    <p class="contact-info">
+                        <strong>📞 Телефон:</strong> <a href="tel:+77777777777">+7 777-777-77-77</a><br>
+                        <strong>📍 Адрес:</strong> Сыганак, 60/5
+                    </p>
+                    <a href="https://yandex.ru/maps/?pt=71.427725,51.121664&z=16&l=map"
+                        target="_blank" class="btn btn-success mt-3">
+                        Построить маршрут
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div id="yandex-map" class="location-map"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <button id="theme-toggle" style="position: fixed;">
@@ -125,6 +145,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" 
     crossorigin="anonymous"></script>
+    
+    <!-- Yandex Maps -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script>
+        ymaps.ready(function () {
+            var map = new ymaps.Map("yandex-map", {
+                center: [51.121664, 71.427725],
+                zoom: 16,
+                controls: []
+            });
+
+            map.controls.add('zoomControl', { size: 'small' });
+            var placemark = new ymaps.Placemark([51.121664, 71.427725], {
+                balloonContent: '<strong>Сыганак, 60/5</strong><br>Astana'
+            });
+
+            map.behaviors.enable('drag');
+            map.behaviors.disable(['scrollZoom', 'rightMouseButtonMagnifier']);
+            map.geoObjects.add(placemark);
+        });
+    </script>
 
     <script src="common.js"></script>
 </body>
