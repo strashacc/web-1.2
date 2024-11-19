@@ -85,6 +85,14 @@ body.bg-dark {
         background-color: #212529;
     }
   }
+
+  ul.list-group {
+    background-color: #495057;
+    li{
+        background-color: #495057;
+
+    }
+  }
 }
 
 
