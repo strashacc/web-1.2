@@ -26,7 +26,68 @@ header {
     opacity: 1;
     transition: opacity 300ms;
 }
-body {
+
+body.bg-light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+body.bg-dark {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.accordion.bg-dark .accordion-button {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+.accordion.bg-dark .accordion-body {
+    background-color: #495057;
+    color: #f8f9fa;
+}
+
+.container-login.bg-dark {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+
+.navbar-dark.bg-success {
+  background-color: #198754 !important;
+}
+
+.navbar-light {
+  background-color: #e9ecef !important;
+}
+
+.accordion.bg-dark .accordion-button {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+.accordion.bg-dark .accordion-body {
+  background-color: #495057;
+  color: #f8f9fa;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.container-login.bg-dark {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+
+
+/* body {
     transition: background-color 0.3s, color 0.3s;
   }
   
@@ -38,7 +99,8 @@ body {
   body.dark {
     background-color: #2c2c2c;
     color: #ffffff;
-  }
+  } */
+
   
   /* .container {
     max-width: 600px;
@@ -48,7 +110,127 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
    */
-  
+
+
+#theme-toggle {
+  position: absolute; 
+  bottom: 20px; 
+  right: 20px; 
+  padding: 10px 20px; 
+  background-color: #007bff; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  transition: background-color 0.3s; 
+}
+
+.dark-mode-switch {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+#theme-toggle:hover {
+  background-color: #0056b3; 
+}
+
+
+   .container-login {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; 
+    margin-top: 50px; 
+   
+    text-align: center; 
+}
+
+#login-section, #app-section {
+    width: 300px;
+    padding: 20px; 
+    background-color: #f8f9fa; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+#login-section.bg-dark {
+  background-color: #343a40; 
+  color: #f8f9fa; 
+}
+
+#app-section.bg-dark {
+  background-color: #343a40; 
+  color: #f8f9fa; 
+}
+
+   .logout {
+    background-color: #ff4d4d; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout:hover {
+    background-color: #e60000; 
+}
+
+.logout:active {
+    background-color: #b30000; 
+    transform: scale(0.95);
+}
+
+  .login{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+.login:hover {
+    background-color: #0056b3;
+}
+
+.login:active {
+    background-color: #003f7f;
+    transform: scale(0.95);
+}
+
+.filter-select{
+  background-color: #f8f9fa; 
+  color: #333; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  padding: 8px 12px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.filter-select:focus {
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  outline: none;
+}
+
+option {
+  background-color: #fff; 
+  color: #333; 
+  padding: 8px; 
+}
+
+
   @media (max-width: 600px) {
     .container {
       padding: 10px;

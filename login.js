@@ -33,11 +33,12 @@
     document.getElementById('user-display').textContent = username;
   }
   
-  document.getElementById('theme-toggle').addEventListener('change', function () {
-    const theme = this.checked ? 'dark' : 'light';
-    document.body.className = theme;
-    localStorage.setItem('theme', theme);
-  });
+  
+  // document.getElementById('theme-toggle').addEventListener('change', function () {
+  //   const theme = this.checked ? 'dark' : 'light';
+  //   document.body.className = theme;
+  //   localStorage.setItem('theme', theme);
+  // });
   
   function saveFilter() {
     const filter = document.getElementById('filter-select').value;
