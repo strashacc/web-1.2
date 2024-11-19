@@ -200,32 +200,44 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeIcon = document.getElementById("theme-icon");
   
     const setTheme = (theme) => {
-      document.body.className = theme;
-      document.querySelector(".accordion").classList.add(theme);
-      document.querySelector('.accordion').classList.remove(theme == 'bg-dark' ? 'bg-light' : 'bg-dark');
-      document.querySelector('#login-section').classList.add(theme);
-      document.querySelector('#login-section').classList.remove(theme == 'bg-dark' ? 'bg-light' : 'bg-dark');
-    //   document.querySelector('#login-section').classList.toggle("bg-dark");
-      if (theme === "bg-dark") {
-        themeIcon.classList.remove("fa-sun");
-        themeIcon.classList.add("fa-moon");
-      } else {
-        themeIcon.classList.remove("fa-moon");
-        themeIcon.classList.add("fa-sun");
-      }
+        document.body.className = theme;
+
+        const accordion = document.querySelector(".accordion");
+        const loginSection = document.querySelector("#login-section");
+        const appSection = document.querySelector("#app-section");
+
+        if (accordion) {
+            accordion.classList.add(theme);
+            accordion.classList.remove(theme === 'bg-dark' ? 'bg-light' : 'bg-dark');
+        }
+
+        if (loginSection) {
+            loginSection.classList.add(theme);
+            loginSection.classList.remove(theme === 'bg-dark' ? 'bg-light' : 'bg-dark');
+        }
+
+        if (appSection) {
+            appSection.classList.add(theme);
+            appSection.classList.remove(theme === 'bg-dark' ? 'bg-light' : 'bg-dark');
+        }
+
+        if (theme === "bg-dark") {
+            themeIcon.classList.remove("fa-sun");
+            themeIcon.classList.add("fa-moon");
+        } else {
+            themeIcon.classList.remove("fa-moon");
+            themeIcon.classList.add("fa-sun");
+        }
     };
   
-    // Устанавливаем тему при загрузке страницы
     const savedTheme = localStorage.getItem("theme") || "bg-light";
     setTheme(savedTheme);
   
     themeToggleButton.addEventListener("click", () => {
-      const currentTheme = document.body.classList.contains("bg-dark") ? "bg-dark" : "bg-light";
-      const newTheme = currentTheme === "bg-dark" ? "bg-light" : "bg-dark";
-      setTheme(newTheme);
-  
-      // Сохраняем тему в localStorage
-      localStorage.setItem("theme", newTheme);
+        const currentTheme = document.body.classList.contains("bg-dark") ? "bg-dark" : "bg-light";
+        const newTheme = currentTheme === "bg-dark" ? "bg-light" : "bg-dark";
+        setTheme(newTheme);
+
+        localStorage.setItem("theme", newTheme);
     });
-  });
-  
+});
