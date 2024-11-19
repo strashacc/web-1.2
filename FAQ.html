@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ</title>
+    <title>FAQ</title>  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <style>
         /* styles for bootstrap accordion override */
@@ -24,10 +25,6 @@
             &:not(.show) {
                 display: block;
             }
-        }
-
-        footer{
-            height: 200px;
         }
     </style>
 
@@ -199,24 +196,22 @@
             </div>
         </section>
 
-        <div class="container">
+        <div class="container-login">
             <div id="login-section">
                 <h2>Login</h2>
                 <input type="text" id="username" placeholder="Enter your username">
-                <button onclick="login()">Login</button>
+                <button class="login" onclick="login()">Login</button>
             </div>
 
             <div id="app-section" style="display:none;">
                 <header>
                     <h2>Welcome, <span id="user-display"></span></h2>
-                    <button onclick="logout()">Logout</button>
-                    <label>
-                        <input type="checkbox" id="theme-toggle"> Dark Mode
-                    </label>
+                    <button class = "logout" onclick="logout()">Logout</button>
+                    <label class="form-check form-switch">
                 </header>
 
                 <h3>FAQ Filters</h3>
-                <select id="filter-select" onchange="saveFilter()">
+                <select class="filter-select" id="filter-select" onchange="saveFilter()">
                     <option value="all">All FAQs</option>
                     <option value="technical">Technical</option>
                     <option value="general">General</option>
@@ -228,7 +223,14 @@
 
     </main>
 
-    <footer class="bg-dark text-white text-center py-4">
+    <!-- <input class="form-check-input" type="checkbox" id="theme-toggle" onchange="toggleDarkMode()"></label> -->
+
+    <button id="theme-toggle">
+        <i id="theme-icon" class="fas fa-sun"></i>
+    </button>
+      
+      
+    <footer style="margin-top: 120px;" class="bg-dark text-white text-center py-4">
         <p id="live-clock"></p>
         <p>Nuraidyn, Sayan, Dias</p>
         <p>&copy; 2024 Travel Destinations. All Rights Reserved.</p>
