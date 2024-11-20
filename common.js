@@ -1,7 +1,4 @@
 
-window.onload = () => {
-    liveClock();
-  };
 
 class Sound{
     constructor(src){
@@ -112,6 +109,7 @@ function validateForm(e){
 }
 
 window.onload = function () {
+    liveClock();
     const darkMode = localStorage.getItem('darkMode');
     const body = document.body;
     const toggle = document.getElementById('theme-toggle');
