@@ -61,6 +61,8 @@ body.bg-dark {
   }
   .accordion .accordion-button{
     background-color: #343a40;
+  }::after{
+    filter: invert(1);
   }
   .accordion .accordion-body {
     background-color: #495057;
@@ -91,6 +93,12 @@ body.bg-dark {
     li{
         background-color: #495057;
 
+    }
+  }
+  select{
+    background-color: #343a40;
+    *{
+      background-color: #495057;
     }
   }
 }

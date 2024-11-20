@@ -36,6 +36,5 @@
 
 ### Prerequisites
 To run the project, you’ll need:
-   - **Node.js** and **npm** (for package management and the development server)
    - **Git** (for cloning and version control)
 
